@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quartro Tech</title>
+  <link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+  <header>
+    <button id="menu-toggle">&#9776;</button>
+    <nav id="sidebar">
+      <button id="close-menu">&#10006;</button>
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="home-section">
+      <div class="overlay"></div>
+      <div class="home-content">
+        <h1 class="welcome-heading">Welcome to Quartro Tech</h1>
+        <div class="main-content">
+          <h3>
+            We create innovative software solutions that set the tone for cutting-edge work —
+            building communication, trust, support, and reliability with our clients to ensure
+            long-term growth and ambition.
+          </h3>
+          <div class="home-buttons">
+            <a class="btn btn--primary" href="#contact">Start a Project</a>
+            <a class="btn btn--stroke" href="#about">More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h4 class="h4 reveal">Hello There</h4>
+      <h1 class="h1 reveal">We Are Quartro Tech</h1>
+      <hr class="reveal">
+      <p class="we reveal">
+        At Quartro Tech, we believe technology should be smart, seamless, and empowering.
+        We are a team of innovators, engineers, and creators driven by a passion to build
+        software that solves real world problems. Our approach is rooted in transparency,
+        collaboration, and long-term thinking. From custom applications to scalable enterprise
+        solutions, we partner with our clients to deliver work that's not only cutting-edge
+        but also reliable and future-ready. Trust and performance aren't just goals —
+        they're the foundation of everything we do.
+      </p>
+    </section>
+
+    <section id="services">
+      <h4 class="h4 reveal">What We Do</h4>
+      <h1 class="reveal">We've got everything you need<br>to launch and grow your business</h1>
+      <hr class="reveal">
+
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <img src="image 1.webp" class="pic" alt="Web Development">
+          <h3>Web Development &amp; Design</h3>
+          <p>Modern, responsive websites and web apps built for performance and great user experience.</p>
+        </div>
+        <div class="service-card">
+          <img src="img 2.webp" class="pic" alt="Brand Identity">
+          <h3>Brand Identity</h3>
+          <p>Distinctive brand systems that communicate who you are and set you apart from the competition.</p>
+        </div>
+      </div>
+
+      <p class="reveal"><b>We have so many things to offer to help grow your business to its peak — keep scrolling to contact us.</b></p>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-header reveal">
+          <span class="section-subtitle">Contact Us</span>
+          <h2 class="section-title">Reach out for a new project<br>or just say hello</h2>
+        </div>
+
+        <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/xjykpwga" method="POST">
+          <h3 class="form-title">Send Us a Message</h3>
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="form-group">
+            <button type="submit" class="btn btn--primary">Send Message</button>
+            <p id="successMsg"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
