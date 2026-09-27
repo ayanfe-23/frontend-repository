@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Clone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">♫ Sonora</div>
+
+      <nav class="nav-main">
+        <a href="#" class="nav-link active" id="nav-home">🏠 Home</a>
+        <a href="#" class="nav-link" id="nav-search">🔍 Search</a>
+        <a href="#" class="nav-link" id="nav-library">📚 Your Library</a>
+      </nav>
+
+      <div class="nav-secondary">
+        <a href="#" class="nav-link" id="create-playlist-btn">➕ Create Playlist</a>
+        <a href="#" class="nav-link" id="nav-liked">❤️ Liked Songs</a>
+      </div>
+
+      <hr class="divider">
+
+      <ul class="playlist-list" id="playlist-list">
+        <li data-playlist="Chill Vibes">Chill Vibes</li>
+        <li data-playlist="Late Night Drive">Late Night Drive</li>
+        <li data-playlist="Focus Flow">Focus Flow</li>
+        <li data-playlist="90s Throwback">90s Throwback</li>
+        <li data-playlist="Workout Mix">Workout Mix</li>
+        <li data-playlist="Rainy Day">Rainy Day</li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <header class="topbar">
+        <div class="nav-arrows">
+          <button class="round-btn" id="back-btn">‹</button>
+          <button class="round-btn" id="forward-btn">›</button>
+        </div>
+      </header>
+
+      <section class="content" id="home-view">
+        <h1 class="greeting">Good evening</h1>
+
+        <div class="quick-grid">
+          <div class="quick-card">Liked Songs</div>
+          <div class="quick-card">Chill Vibes</div>
+          <div class="quick-card">Focus Flow</div>
+          <div class="quick-card">90s Throwback</div>
+          <div class="quick-card">Late Night Drive</div>
+          <div class="quick-card">Workout Mix</div>
+        </div>
+
+        <h2 class="section-title">Made for you</h2>
+        <div class="card-row" id="made-for-you">
+          <div class="album-card" data-track="0">
+            <div class="album-art" style="background-image: url('images/covers/sunset-drive.jpg');"></div>
+            <div class="album-name">Sunset Drive</div>
+            <div class="album-desc">Nova Ray</div>
+          </div>
+          <div class="album-card" data-track="1">
+            <div class="album-art" style="background-image: url('images/covers/glass-horizon.jpg');"></div>
+            <div class="album-name">Glass Horizon</div>
+            <div class="album-desc">The Quiet Static</div>
+          </div>
+          <div class="album-card" data-track="2">
+            <div class="album-art" style="background-image: url('images/covers/midnight-arcade.jpg');"></div>
+            <div class="album-name">Midnight Arcade</div>
+            <div class="album-desc">Pixel Coast</div>
+          </div>
+          <div class="album-card" data-track="3">
+            <div class="album-art" style="background-image: url('images/covers/paper-planes.jpg');"></div>
+            <div class="album-name">Paper Planes</div>
+            <div class="album-desc">Lena Cho</div>
+          </div>
+          <div class="album-card" data-track="4">
+            <div class="album-art" style="background-image: url('images/covers/slow-bloom.jpg');"></div>
+            <div class="album-name">Slow Bloom</div>
+            <div class="album-desc">Marigold</div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Recently played</h2>
+        <div class="card-row" id="recently-played">
+          <div class="album-card" data-track="5">
+            <div class="album-art" style="background-image: url('images/covers/city-lights.jpg');"></div>
+            <div class="album-name">City Lights</div>
+            <div class="album-desc">Nova Ray</div>
+          </div>
+          <div class="album-card" data-track="6">
+            <div class="album-art" style="background-image: url('images/covers/static-bloom.jpg');"></div>
+            <div class="album-name">Static Bloom</div>
+            <div class="album-desc">The Quiet Static</div>
+          </div>
+          <div class="album-card" data-track="7">
+            <div class="album-art" style="background-image: url('images/covers/coin-return.jpg');"></div>
+            <div class="album-name">Coin Return</div>
+            <div class="album-desc">Pixel Coast</div>
+          </div>
+          <div class="album-card" data-track="8">
+            <div class="album-art" style="background-image: url('images/covers/folded-note.jpg');"></div>
+            <div class="album-name">Folded Note</div>
+            <div class="album-desc">Lena Cho</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" id="search-view" style="display:none;">
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="What do you want to listen to?"
+          autocomplete="off"
+        >
+        <h2 class="section-title">Results</h2>
+        <div class="card-row" id="search-results"></div>
+        <p class="search-empty" id="search-empty" style="display:none;">No results found.</p>
+      </section>
+
+      <section class="content" id="liked-view" style="display:none;">
+        <h1 class="greeting">Liked Songs</h1>
+        <p class="drag-hint">Drag tracks to reorder your queue.</p>
+        <ul class="liked-list" id="liked-list"></ul>
+      </section>
+
+      <section class="content" id="library-view" style="display:none;">
+        <h1 class="greeting">Your Library</h1>
+        <div class="card-row" id="library-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Now playing bar -->
+  <footer class="now-playing">
+    <div class="np-track">
+      <div class="np-art" id="np-art"></div>
+      <div class="np-info">
+        <div class="np-title" id="np-title">Choose a track</div>
+        <div class="np-artist" id="np-artist">—</div>
+      </div>
+      <button class="like-btn" id="like-btn">♡</button>
+    </div>
+
+    <div class="np-controls">
+      <div class="np-buttons">
+        <button class="ctrl-btn" id="shuffle-btn">🔀</button>
+        <button class="ctrl-btn" id="prev-btn">⏮</button>
+        <button class="ctrl-btn play-btn" id="play-btn">▶</button>
+        <button class="ctrl-btn" id="next-btn">⏭</button>
+        <button class="ctrl-btn" id="repeat-btn">🔁</button>
+      </div>
+      <div class="np-seek">
+        <span class="time" id="time-current">0:00</span>
+        <div class="seek-bar" id="seek-bar"><div class="seek-fill" id="seek-fill"></div></div>
+        <span class="time" id="time-total">0:00</span>
+      </div>
+    </div>
+
+    <div class="np-extra">
+      <button class="ctrl-btn" id="mute-btn">🔊</button>
+      <div class="volume-bar" id="volume-bar"><div class="volume-fill" id="volume-fill"></div></div>
+    </div>
+  </footer>
+
+  <audio id="audio-player"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
