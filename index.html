@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Oluwaferanmi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italiana&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- ============ SCENE 1: LANDING ============ -->
+<section id="landing" class="scene active">
+  <div class="stars" id="stars"></div>
+  <div class="landing-inner">
+    <div class="eyebrow-script">a little something for</div>
+    <h1 class="landing-title">Oluwaferanmi</h1>
+    <button class="open-btn" id="openBtn" aria-label="Click on me, Mary">
+      Click on me, Mary <span class="heart-tiny">❤️</span>
+    </button>
+    <div class="landing-hint">go on, tap it</div>
+  </div>
+</section>
+
+<!-- ============ SCENE 1.5: COUNTDOWN + REVEAL ============ -->
+<section id="countdownScene" class="scene">
+  <div class="countdown-text" id="countdownText"></div>
+</section>
+
+<!-- ============ SCENE 2: LETTER ============ -->
+<section id="letterScene" class="scene">
+  <div class="envelope-wrap" id="envelopeWrap">
+    <div class="envelope" id="envelope" role="button" aria-label="Tap to open the letter" tabindex="0">
+      <div class="env-body"></div>
+      <div class="env-flap" id="envFlap"></div>
+      <div class="seal" id="seal">❤</div>
+    </div>
+    <div class="tap-hint">tap the letter to open it</div>
+  </div>
+
+  <div class="letter-stage">
+    <div class="letter-paper" id="letterPaper">
+      <div class="letter-inner">
+        <div class="letter-heading">Happy Birthday, my princess</div>
+        <div class="letter-sub">for Oluwaferanmi ❤️</div>
+
+        <div class="letter-body" id="letterBody">
+          <!-- paragraphs injected by JS so we can reveal them line by line -->
+        </div>
+
+        <div class="letter-signoff">with all my love</div>
+        <div class="scroll-note">✨</div>
+        <button class="continue-btn" id="continueBtn">Next ❯</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENE 3: MEMORIES BOOK ============ -->
+<section id="bookScene" class="scene">
+  <div class="book-wrap">
+    <h2 class="book-title">Our Memories</h2>
+
+    <div class="book-stage" id="bookStage">
+
+      <!-- open pages sit underneath, always present -->
+      <div class="book-pages">
+        <div class="page-corner tl">Our Memories</div>
+        <div class="video-frame">
+          <video id="memoryVideo" playsinline preload="auto"></video>
+          <img id="memoryImage" class="memory-image" alt="">
+          <div class="video-placeholder" id="videoPlaceholder">video coming soon 🎬</div>
+          <button class="skip-btn replay-btn" id="replayBtn">↻ Replay</button>
+          <button class="skip-btn" id="skipBtn">Next ❯</button>
+        </div>
+        <div class="page-corner br" id="pageCounter">1 / 1</div>
+      </div>
+
+      <!-- closed red cover sits on top, opens on tap -->
+      <div class="book-cover" id="bookCover" role="button" tabindex="0" aria-label="Tap to open the book">
+        <div class="cover-spine"></div>
+        <div class="cover-frame">
+          <div class="cover-ornament top">✦</div>
+          <div class="cover-title">Our<br>Memories</div>
+          <div class="cover-ornament bottom">❤</div>
+        </div>
+        <div class="cover-hint">tap to open</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENE 4: FLOWERS + FINAL MESSAGE ============ -->
+<section id="finaleScene" class="scene">
+  <div class="finale-inner">
+    <div class="flower-heart" id="flowerHeart"></div>
+    <div class="finale-message" id="finaleMessage"></div>
+  </div>
+</section>
+
+<script src="index.js"></script>
+</body>
+</html>
